@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
         supportFragmentManager.beginTransaction().replace(R.id.linearLayoutFragment, FragmentList()).commit()
         val logoPokemon = findViewById<AppCompatImageView>(R.id.imageViewPokeLogo)
         Glide.with(this).load(HEADER_IMAGE).into(logoPokemon)

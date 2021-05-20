@@ -8,9 +8,9 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sergio.projetofacullistagame.R
-import com.sergio.projetofacullistagame.model.PokemonData
+import com.sergio.projetofacullistagame.model.entity.Pokemon
 
-class PokemonListAdapter(private val list: ArrayList<PokemonData>) : RecyclerView.Adapter<PokemonListAdapter.PokemonListHolder>(){
+class PokemonListAdapter(private val list: List<Pokemon>) : RecyclerView.Adapter<PokemonListAdapter.PokemonListHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonListHolder {
@@ -35,7 +35,7 @@ class PokemonListAdapter(private val list: ArrayList<PokemonData>) : RecyclerVie
         val pokemonType1 = itemView.findViewById<AppCompatTextView>(R.id.textViewType1)
         val pokemonType2 = itemView.findViewById<AppCompatTextView>(R.id.textViewType2)
 
-        fun set(pokemon: PokemonData) {
+        fun set(pokemon: Pokemon) {
             Glide.with(itemView.context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.number}.png").into(imagePokemon)
             numberPokemon.text = "#${pokemon.number}"
             namePokemon.text = pokemon.name
